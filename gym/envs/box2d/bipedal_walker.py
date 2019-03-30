@@ -1,7 +1,8 @@
-import sys
-import math
+cof1,cof2 = -0.2,2.4
 
+import sys, math
 import numpy as np
+
 import Box2D
 from Box2D.b2 import (edgeShape, circleShape, fixtureDef, polygonShape, revoluteJointDef, contactListener)
 
@@ -52,7 +53,7 @@ HULL_POLY =[
     (+34,-8), (-30,-8)
     ]
 LEG_DOWN = -8/SCALE
-LEG_W, LEG_H = 8/SCALE, 34/SCALE
+LEG_W, LEG_H = (cof1+1.1)*10/SCALE, (cof2+1.1)*10/SCALE
 
 VIEWPORT_W = 600
 VIEWPORT_H = 400
@@ -138,9 +139,9 @@ class BipedalWalker(gym.Env, EzPickle):
 
         self.reset()
 
-        high = np.array([np.inf] * 24)
-        self.action_space = spaces.Box(np.array([-1, -1, -1, -1]), np.array([1, 1, 1, 1]), dtype=np.float32)
-        self.observation_space = spaces.Box(-high, high, dtype=np.float32)
+        high = np.array([np.inf]*24)
+        self.action_space = spaces.Box(np.array([-1,-1,-1,-1]), np.array([+1,+1,+1,+1]))
+        self.observation_space = spaces.Box(-high, high)
 
     def seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
