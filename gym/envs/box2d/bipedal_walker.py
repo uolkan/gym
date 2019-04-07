@@ -1,5 +1,3 @@
-cof1,cof2 = -0.2,2.4
-
 import sys, math
 import numpy as np
 
@@ -10,8 +8,8 @@ import gym
 from gym import spaces
 from gym.utils import colorize, seeding, EzPickle
 
+cof1,cof2 = -0.2,2.4
 # This is simple 4-joints walker robot environment.
-#
 # There are two versions:
 #
 # - Normal, with slightly uneven terrain.
