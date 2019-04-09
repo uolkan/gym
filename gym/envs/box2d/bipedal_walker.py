@@ -10,7 +10,6 @@ import gym
 from gym import spaces
 from gym.utils import colorize, seeding, EzPickle
 
-cof1,cof2 = -0.2,2.4
 # This is simple 4-joints walker robot environment.
 # There are two versions:
 #
@@ -37,6 +36,7 @@ cof1,cof2 = -0.2,2.4
 # To solve hardcore version you need 300 points in 2000 time steps.
 #
 # Created by Oleg Klimov. Licensed on the same terms as the rest of OpenAI Gym.
+cof1,cof2 = -0.2,2.4
 
 FPS    = 50
 SCALE  = 30.0   # affects how fast-paced the game is, forces should be adjusted as well
