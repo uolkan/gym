@@ -1,4 +1,6 @@
-import sys, math
+import sys
+import math
+
 import numpy as np
 
 import Box2D
